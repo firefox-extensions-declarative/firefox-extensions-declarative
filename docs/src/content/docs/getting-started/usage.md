@@ -12,6 +12,8 @@ Here is a non-exhaustive list of these:
 - [Glide](https://glide-browser.app/)
 - Many other Firefox forks.
 
+Then set `xpinstall.signatures.required` to `false` in either `user.js` or `about:config`.
+
 ## Installation
 Once you have a browser that supports unsigned extensions, follow the instructions for your platform.
 
@@ -21,4 +23,6 @@ TODO
 
 ### Build from source
 
-Clone the extension you want to install and follow the instructions in its reference.
+Clone the extension you want to install and follow the build instructions in its reference.
+
+To install an XPI, go to `about:addons`, click the button to the side of "Manage Your Extensions", and click "Install from file".

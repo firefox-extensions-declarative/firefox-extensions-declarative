@@ -8,6 +8,9 @@ title: userchrome-toggle-extended-2
 | Repo | https://github.com/firefox-extensions-declarative/userchrome-toggle-extended-2-declarative |
 | Extension ID | `userchrome-toggle-extended@n2ezr.ru` |
 
+## Building
+Run `zip -r ../userchrome-toggle-extended-2-declarative.xpi`. The XPI is located at `../userchrome-toggle-extended-2-declarative.xpi`.
+
 ## Options
 
 ### `allowMultiple`

@@ -8,6 +8,16 @@ title: Stylus
 | Repo | https://github.com/firefox-extensions-declarative/stylus-declarative |
 | Extension ID | `{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}` |
 
+## Building
+Run `pnpm install` and then `npm run build-firefox`.  
+To create the XPI, run the following:
+```bash
+cd dist-firefox/
+zip -r ../stylus.xpi .
+cd ..
+```
+The XPI will be located at `stylus.xpi`.
+
 ## Types
 
 ### `Style`

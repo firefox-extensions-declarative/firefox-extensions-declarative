@@ -8,6 +8,9 @@ title: Dark Reader
 | Repo | https://github.com/firefox-extensions-declarative/darkreader-declarative |
 | Extension ID | `addon@darkreader.org` |
 
+## Building
+Run `npm install` and then `npm run build:firefox`. The XPI is located at `build/release/darkreader-firefox.xpi`.
+
 ## Types
 
 ### `Theme`

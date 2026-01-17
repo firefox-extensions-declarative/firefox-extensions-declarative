@@ -1,6 +1,7 @@
 Librewolf
 Surfingkeys
 Violentmonkey
+XPI
 userscripts
 userstyle
 userstyle's

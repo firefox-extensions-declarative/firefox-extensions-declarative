@@ -8,6 +8,17 @@ title: Violentmonkey
 | Repo | https://github.com/firefox-extensions-declarative/violentmonkey-declarative |
 | Extension ID | `{aecec67f-0d10-4fa7-b7c7-609a2db280cf}` |
 
+## Building
+Run the following:
+```bash
+yarn install
+yarn run build
+cd dist/
+zip -r ../violentmonkey.xpi .
+cd ..
+```
+The XPI will be located at `violentmonkey.xpi`.
+
 ## Options
 
 ### `options`
