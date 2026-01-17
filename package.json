@@ -1,0 +1,25 @@
+{
+	"name": "firefox-extensions-declarative",
+	"version": "1.0.0",
+	"packageManager": "pnpm@10.26.1",
+	"description": "",
+	"author": "",
+	"license": "ISC",
+	"keywords": [],
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "catalog:",
+		"astro": "catalog:",
+		"astro-eslint-parser": "catalog:",
+		"dprint-plugin-malva": "catalog:",
+		"dprint-plugin-markup": "catalog:",
+		"eslint": "catalog:",
+		"eslint-plugin-astro": "catalog:",
+		"eslint-plugin-format": "catalog:",
+		"typescript": "catalog:",
+		"typescript-language-server": "catalog:"
+	}
+}

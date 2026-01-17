@@ -1,0 +1,6 @@
+# vim: set ft=starlark: -*- mode: python; -*-
+
+local_resource(
+	"frontend",
+	serve_cmd="pnpm dev --host --port 54608",
+)
