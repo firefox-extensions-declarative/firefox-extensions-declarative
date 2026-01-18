@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config"
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://firefox-extensions-declarative.github.io",
 	integrations: [
 		starlight({
 			plugins: [catppuccin({

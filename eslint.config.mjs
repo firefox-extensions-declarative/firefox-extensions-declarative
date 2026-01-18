@@ -3,6 +3,8 @@ import format from "eslint-plugin-format"
 
 export default antfu(
 	{
+		ignores: [".github"],
+
 		stylistic: {
 			indent: "tab",
 			quotes: "double",

@@ -1,5 +1,31 @@
 {
   "nodes": {
+    "actions-nix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "git-hooks": [
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767301609,
+        "narHash": "sha256-cpNJM/giuMngZtZb2GaSaUusY5dNkWg0D9LQbC/Ma7Q=",
+        "owner": "nialov",
+        "repo": "actions.nix",
+        "rev": "06ca0ab39bd0b2e467e35d5bab3a72311374be5c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nialov",
+        "repo": "actions.nix",
+        "type": "github"
+      }
+    },
     "flake-file": {
       "locked": {
         "lastModified": 1763763269,
@@ -55,6 +81,49 @@
         "type": "github"
       }
     },
+    "git-hooks": {
+      "inputs": {
+        "flake-compat": [],
+        "gitignore": "gitignore",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767281941,
+        "narHash": "sha256-6MkqajPICgugsuZ92OMoQcgSHnD6sJHwk8AxvMcIgTE=",
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "rev": "f0927703b7b1c8d97511c4116eb9b4ec6645a0fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
+    "gitignore": {
+      "inputs": {
+        "nixpkgs": [
+          "git-hooks",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709087332,
+        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
     "import-tree": {
       "locked": {
         "lastModified": 1763762820,
@@ -88,6 +157,35 @@
         "type": "github"
       }
     },
+    "nix-auto-ci": {
+      "inputs": {
+        "actions-nix": [
+          "actions-nix"
+        ],
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "git-hooks": [
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768691579,
+        "narHash": "sha256-nBhXBWxeHO+kib5ZlZpKOPaQixbHpjXFf7Pa2eA2PjM=",
+        "owner": "aigis-llm",
+        "repo": "nix-auto-ci",
+        "rev": "eb412601dfd8b998179e33a007a83c219bba5d4a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aigis-llm",
+        "repo": "nix-auto-ci",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1768305791,
@@ -106,11 +204,14 @@
     },
     "root": {
       "inputs": {
+        "actions-nix": "actions-nix",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
         "flint": "flint",
+        "git-hooks": "git-hooks",
         "import-tree": "import-tree",
         "make-shell": "make-shell",
+        "nix-auto-ci": "nix-auto-ci",
         "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix"
       }

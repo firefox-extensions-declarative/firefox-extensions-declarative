@@ -9,6 +9,14 @@
     );
 
   inputs = {
+    actions-nix = {
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:nialov/actions.nix";
+    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -18,10 +26,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:NotAShelf/flint";
     };
+    git-hooks = {
+      inputs = {
+        flake-compat.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:cachix/git-hooks.nix";
+    };
     import-tree.url = "github:vic/import-tree";
     make-shell = {
       inputs.flake-compat.follows = "";
       url = "github:nicknovitski/make-shell";
+    };
+    nix-auto-ci = {
+      inputs = {
+        actions-nix.follows = "actions-nix";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:aigis-llm/nix-auto-ci";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix = {
