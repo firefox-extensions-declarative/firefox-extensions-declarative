@@ -17,9 +17,26 @@ Then set `xpinstall.signatures.required` to `false` in either `user.js` or `abou
 ## Installation
 Once you have a browser that supports unsigned extensions, follow the instructions for your platform.
 
-### Nix
+### Nix (with flakes and home-manager)
 
-TODO
+First, add the `github:firefox-extensions-declarative/firefox-extensions-declarative` flake to your flake inputs.  
+Now, you can use the extensions in you home-manager configuration like so:
+```nix
+# Example with surfingkeys-declarative
+{
+  programs.firefox.profiles.nix = {
+    extensions.packages = [
+      inputs.firefox-extensions-declarative.packages.${pkgs.stdenv.hostPlatform.system}.surfingkeys-declarative
+    ];
+  };
+  programs.firefox.policies = {
+    "3rdparty".Extensions."surfingkeys@brookhong.github.io" = {
+      showAdvanced = true;
+      snippets = builtins.readFile ./surfingkeys.js;
+    };
+  };
+}
+```
 
 ### Build from source
 

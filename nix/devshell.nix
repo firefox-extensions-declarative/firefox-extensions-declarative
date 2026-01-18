@@ -28,6 +28,7 @@
           pkgs.deadnix
           pkgs.statix
           inputs'.flint.packages.default
+          pkgs.npins
           pkgs.just
           pkgs.tilt
           pkgs.harper

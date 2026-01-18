@@ -3,7 +3,7 @@ import format from "eslint-plugin-format"
 
 export default antfu(
 	{
-		ignores: [".github"],
+		ignores: [".github", "**/npins/*"],
 
 		stylistic: {
 			indent: "tab",

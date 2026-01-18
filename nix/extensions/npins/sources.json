@@ -1,0 +1,70 @@
+{
+  "pins": {
+    "darkreader-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "darkreader-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "ff00be39d43178dda15962a86283870d058af37b",
+      "url": "https://github.com/firefox-extensions-declarative/darkreader-declarative/archive/ff00be39d43178dda15962a86283870d058af37b.tar.gz",
+      "hash": "sha256-Hw8xo8+FcW4Kx8rgtvGKoI6hArJ80YWKrRIoWJ3BsyQ="
+    },
+    "stylus-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "stylus-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "ff615c0350bb343d0035ff1fe66d7d22853a629f",
+      "url": "https://github.com/firefox-extensions-declarative/stylus-declarative/archive/ff615c0350bb343d0035ff1fe66d7d22853a629f.tar.gz",
+      "hash": "sha256-4bwZC5NxjIl4X5UMkFX3GX7VQdzWFRSYZ//BvxpBRzQ="
+    },
+    "surfingkeys-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "Surfingkeys-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "a80746781359573ed941f14fbb15fd9aded2f5ce",
+      "url": "https://github.com/firefox-extensions-declarative/Surfingkeys-declarative/archive/a80746781359573ed941f14fbb15fd9aded2f5ce.tar.gz",
+      "hash": "sha256-7oJF/xGRjXIwJ15T3vXipm4HZWP+FV0il1ZPI5Le0Sk="
+    },
+    "userchrome-toggle-extended-2-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "userchrome-toggle-extended-2-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "ade2f8f9c003a04cfccc99f16e110359729303c0",
+      "url": "https://github.com/firefox-extensions-declarative/userchrome-toggle-extended-2-declarative/archive/ade2f8f9c003a04cfccc99f16e110359729303c0.tar.gz",
+      "hash": "sha256-sItk960a9ok7CAgYXa9fXLrgYFZ5ii7Oigpa9u2e0h4="
+    },
+    "violentmonkey-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "violentmonkey-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "df26695415dc67df03d1656e86f734124657e07a",
+      "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/df26695415dc67df03d1656e86f734124657e07a.tar.gz",
+      "hash": "sha256-4OOI/w6zyo10ASh6Fpy68JsQKKazoQleMM9OoRdwCpQ="
+    }
+  },
+  "version": 7
+}

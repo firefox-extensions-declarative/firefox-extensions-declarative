@@ -25,5 +25,9 @@
       };
       programs.deadnix.enable = true;
       programs.statix.enable = true;
+
+      settings.global.excludes = [
+        "*/npins/*"
+      ];
     };
 }
