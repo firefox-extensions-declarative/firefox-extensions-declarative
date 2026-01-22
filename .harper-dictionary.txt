@@ -1,8 +1,0 @@
-Librewolf
-Songmu's
-Surfingkeys
-Violentmonkey
-XPI
-userscripts
-userstyle
-userstyle's

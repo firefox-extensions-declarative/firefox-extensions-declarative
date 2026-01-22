@@ -31,7 +31,7 @@
           pkgs.npins
           pkgs.just
           pkgs.tilt
-          pkgs.harper
+          pkgs.codebook
         ];
 
         shellHook = ''
