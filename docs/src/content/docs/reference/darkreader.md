@@ -109,6 +109,11 @@ Type: `string`
 I don't know. Just put default, that works.  
 Type: `string`  
 
+#### `immediateModify`
+See https://github.com/darkreader/darkreader/pull/8322.  
+Type: `boolean`  
+Default: `false`  
+
 ### `CustomSiteConfig`
 Custom site configuration.  
 
