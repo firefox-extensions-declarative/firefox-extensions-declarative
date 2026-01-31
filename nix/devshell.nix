@@ -31,12 +31,14 @@
           pkgs.npins
           pkgs.just
           pkgs.tilt
-          pkgs.codebook
+          pkgs.typos
         ];
 
         shellHook = ''
           export TILT_PORT=5031
         '';
       };
+
+      treefmt.programs.typos.enable = true;
     };
 }
