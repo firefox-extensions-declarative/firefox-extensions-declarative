@@ -13,7 +13,7 @@
           yarnDeps = pkgs.fetchYarnDeps {
             inherit src;
             pname = "violentmonkey-yarn-deps";
-            hash = "sha256-k8kQgo1bDasECRdxs2/Asgc7itV/sB0hbFdpjTXmqvk=";
+            hash = "sha256-zZousiwarvdNupkCxnjRU8ScGqrVYQroLGLdQRYyuCk=";
           };
         in
         pkgs.stdenv.mkDerivation {
