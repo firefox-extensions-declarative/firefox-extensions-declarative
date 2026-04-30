@@ -14,7 +14,7 @@
           pnpmDeps = pkgs.fetchPnpmDeps {
             inherit src pnpm;
             pname = "stylus-pnpm-deps";
-            hash = "sha256-l8z2o0DHkcdj9D7MExoPW65KVEPFZwSVm1/KRg0WIEw=";
+            hash = "sha256-6wRX5g7/EIpr+2uq1fE0bGSu0wtW44+zlUGuqZjZ6Yo=";
             fetcherVersion = 3; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
           };
         in
