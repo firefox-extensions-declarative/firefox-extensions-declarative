@@ -22,7 +22,7 @@
               pkgs.cairo
               pkgs.pango
             ];
-            derivationArgs.PUPPETEER_SKIP_DOWNLOAD = "1";
+            derivationArgs.env.PUPPETEER_SKIP_DOWNLOAD = "1";
           };
         in
         pkgs.stdenv.mkDerivation {
