@@ -61,9 +61,9 @@
       },
       "branch": "declarative",
       "submodules": false,
-      "revision": "23846cceca093bc21a3f448a359636d52b504b4b",
-      "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/23846cceca093bc21a3f448a359636d52b504b4b.tar.gz",
-      "hash": "sha256-3oXcdjpFyCfcr1X3vsvlsKowjbGSJyrFiKKdUMTlvec="
+      "revision": "6cc72510124f8d5c17788480a782730a3e4cf168",
+      "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/6cc72510124f8d5c17788480a782730a3e4cf168.tar.gz",
+      "hash": "sha256-1nofbZOYRrPUeLZVFXjIbuK2rXy3D9Z/aEnCP+Mejs8="
     }
   },
   "version": 7
