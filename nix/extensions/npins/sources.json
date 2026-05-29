@@ -22,9 +22,9 @@
       },
       "branch": "declarative",
       "submodules": false,
-      "revision": "5e005829e5a624040a5c0960164324be94e81e7c",
-      "url": "https://github.com/firefox-extensions-declarative/stylus-declarative/archive/5e005829e5a624040a5c0960164324be94e81e7c.tar.gz",
-      "hash": "sha256-fP6/RNugwr8rBpYg/pMjRdKFUi96bcMFpgzTclEiJS4="
+      "revision": "92d311f3762fbd2641a8a9c8736c61f9437a39b3",
+      "url": "https://github.com/firefox-extensions-declarative/stylus-declarative/archive/92d311f3762fbd2641a8a9c8736c61f9437a39b3.tar.gz",
+      "hash": "sha256-+uV2WIpVxL0Nq1FOYVoW12MQHtjMYyX/J5IccdNEycU="
     },
     "surfingkeys-declarative": {
       "type": "Git",
