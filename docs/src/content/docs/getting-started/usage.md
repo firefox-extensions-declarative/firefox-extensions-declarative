@@ -38,6 +38,34 @@ Now, you can use the extensions in you home-manager configuration like so:
 }
 ```
 
+### Nix (home-manager with alternative input pinners)
+
+Add the equivalent of `github:firefox-extensions-declarative/firefox-extensions-declarative` to your pinner, then you can instantiate the package set like this:
+```nix
+let
+  firefox-extensions-declarative = import sources.firefox-extensions-declarative {
+    system = pkgs.stdenv.hostPlatform.system;
+    overrides = [
+      {
+        path = [ "nixpkgs" ];
+        value = {
+          sourceInfo.outPath = sources.nixpkgs;
+        };
+      }
+    ];
+  };
+in
+{
+  programs.firefox.profiles.nix = {
+    extensions.packages = [
+      firefox-extensions-declarative.surfingkeys-declarative
+    ];
+  };
+}
+```
+
+Powered by [`flake-ultra-polyfill`](https://github.com/bitbloxhub/flake-ultra-polyfill/).
+
 ### Build from source
 
 Clone the extension you want to install and follow the build instructions in its reference.
