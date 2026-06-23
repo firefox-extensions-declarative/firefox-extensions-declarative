@@ -64,6 +64,19 @@
       "revision": "724f849eb6ed04dc1afdf1ed5fd2e59a321b93f8",
       "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/724f849eb6ed04dc1afdf1ed5fd2e59a321b93f8.tar.gz",
       "hash": "sha256-ZF8wANg++3Y2Dkpz/CjXt54Z7rK/Q5TjXQAwPdjMTKM="
+    },
+    "youtube-shorts-block-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "Youtube-shorts-block-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "8a452b3915174566369a5bef050a01d906f71389",
+      "url": "https://github.com/firefox-extensions-declarative/Youtube-shorts-block-declarative/archive/8a452b3915174566369a5bef050a01d906f71389.tar.gz",
+      "hash": "sha256-x24Q6ywIZT7NAALWpVUPgXrlc9m3iO2dbd8NYGtdJk4="
     }
   },
   "version": 7
