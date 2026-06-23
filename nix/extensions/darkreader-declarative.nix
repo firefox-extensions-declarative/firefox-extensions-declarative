@@ -29,6 +29,7 @@
             mkdir -p $dst
             cp build/release/darkreader-firefox.xpi $dst/addon@darkreader.org.xpi
           '';
+          passthru.extensionId = "addon@darkreader.org";
         };
     };
 }

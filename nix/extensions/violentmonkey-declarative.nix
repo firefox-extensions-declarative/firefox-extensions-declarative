@@ -46,6 +46,7 @@
             mkdir -p $dst
             cp violentmonkey.xpi $dst/${violentmonkeyExtensionId}.xpi
           '';
+          passthru.extensionId = violentmonkeyExtensionId;
         };
     };
 }

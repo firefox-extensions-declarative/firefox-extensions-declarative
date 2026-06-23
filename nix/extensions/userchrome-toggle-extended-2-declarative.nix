@@ -24,6 +24,7 @@
             mkdir -p $dst
             cp ../userchrome-toggle-extended-2-declarative.xpi $dst/${userChromeToggleExtensionId}.xpi
           '';
+          passthru.extensionId = userChromeToggleExtensionId;
         };
     };
 }

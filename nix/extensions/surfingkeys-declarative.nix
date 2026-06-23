@@ -44,6 +44,7 @@
             mkdir -p $dst
             cp dist/production/firefox/sk.zip $dst/${surfingkeysExtensionId}.xpi
           '';
+          passthru.extensionId = surfingkeysExtensionId;
         };
     };
 }

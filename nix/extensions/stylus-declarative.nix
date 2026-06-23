@@ -38,6 +38,7 @@
             mkdir -p $dst
             cp stylus.xpi $dst/${stylusExtensionId}.xpi
           '';
+          passthru.extensionId = stylusExtensionId;
         };
     };
 }

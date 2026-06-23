@@ -30,6 +30,7 @@
             mkdir -p $dst
             cp Youtube-shorts_block_*_fx.zip $dst/${extensionId}.xpi
           '';
+          passthru.extensionId = extensionId;
         };
     };
 }
