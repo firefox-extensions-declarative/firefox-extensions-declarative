@@ -38,6 +38,8 @@ Now, you can use the extensions in you home-manager configuration like so:
 }
 ```
 
+You can also get the extension ID by getting `.extensionId` on the extension package.
+
 ### Nix (home-manager with alternative input pinners)
 
 Add the equivalent of `github:firefox-extensions-declarative/firefox-extensions-declarative` to your pinner, then you can instantiate the package set like this:
