@@ -13,6 +13,19 @@
       "url": "https://github.com/firefox-extensions-declarative/darkreader-declarative/archive/3e5b08badcc62a413ec26f08f7e97508e02a9218.tar.gz",
       "hash": "sha256-yXj+kXdpG5zTDUQNYY4327HTY0Fo262g/SCCgLCXeac="
     },
+    "dearrow-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "DeArrow-declarative"
+      },
+      "branch": "declarative",
+      "submodules": true,
+      "revision": "cad13efec7d69c718a0e988ec3b91cda0125611c",
+      "url": "https://github.com/firefox-extensions-declarative/DeArrow-declarative/archive/cad13efec7d69c718a0e988ec3b91cda0125611c.tar.gz",
+      "hash": "sha256-c1y3ewiSO67x1C1qzS9wc2IzcJS9lHKDEjZ9cQbW8ZQ="
+    },
     "redirector-declarative": {
       "type": "Git",
       "repository": {
