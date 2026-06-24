@@ -22,9 +22,9 @@
       },
       "branch": "declarative",
       "submodules": true,
-      "revision": "cad13efec7d69c718a0e988ec3b91cda0125611c",
-      "url": "https://github.com/firefox-extensions-declarative/DeArrow-declarative/archive/cad13efec7d69c718a0e988ec3b91cda0125611c.tar.gz",
-      "hash": "sha256-c1y3ewiSO67x1C1qzS9wc2IzcJS9lHKDEjZ9cQbW8ZQ="
+      "revision": "b4e935aca895fcfa9fa63d5dd73fd63609c3565c",
+      "url": null,
+      "hash": "sha256-wv40Pvs6Vtdwun4oQJn++Eyj7zlgq+uaijibA+S6VSI="
     },
     "redirector-declarative": {
       "type": "Git",
