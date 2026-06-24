@@ -7,7 +7,7 @@
     {
       packages.sponsorblock-declarative =
         let
-          lib = pkgs.lib;
+          inherit (pkgs) lib;
           nodejs = pkgs.nodejs_25;
           extensionId = "sponsorBlocker@ajay.app";
           src = (import ./npins).sponsorblock-declarative;
@@ -15,12 +15,15 @@
           packageLock =
             let
               raw = builtins.fromJSON (builtins.readFile "${src}/package-lock.json");
-              patchResolved = modulePath: module:
+              patchResolved =
+                modulePath: module:
                 if module ? resolved || !(module ? version) || !(lib.hasInfix "node_modules/" modulePath) then
                   module
                 else
                   let
-                    packagePath = lib.last (lib.splitString "/node_modules/" (lib.removePrefix "node_modules/" modulePath));
+                    packagePath = lib.last (
+                      lib.splitString "/node_modules/" (lib.removePrefix "node_modules/" modulePath)
+                    );
                     nameParts = lib.splitString "/" packagePath;
                     packageName =
                       if lib.hasPrefix "@" (builtins.elemAt nameParts 0) then
@@ -33,11 +36,13 @@
                       else
                         builtins.elemAt nameParts 0;
                   in
-                  module // {
+                  module
+                  // {
                     resolved = "https://registry.npmjs.org/${packageName}/-/${tarballName}-${module.version}.tgz";
                   };
             in
-            raw // {
+            raw
+            // {
               packages = lib.mapAttrs patchResolved raw.packages;
             };
           npmDeps = pkgs.importNpmLock.buildNodeModules {

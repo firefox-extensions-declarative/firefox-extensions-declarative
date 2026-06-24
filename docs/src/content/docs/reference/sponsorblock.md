@@ -246,7 +246,7 @@ Use testing server.
 Type: `boolean`
 Default: `false`
 
-### `allowExpirements`
+### `allowExperiments`
 Enable experimental features.
 Type: `boolean`
 Default: `true`
