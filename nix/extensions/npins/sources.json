@@ -13,6 +13,19 @@
       "url": "https://github.com/firefox-extensions-declarative/darkreader-declarative/archive/3e5b08badcc62a413ec26f08f7e97508e02a9218.tar.gz",
       "hash": "sha256-yXj+kXdpG5zTDUQNYY4327HTY0Fo262g/SCCgLCXeac="
     },
+    "redirector-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "Redirector-declarative"
+      },
+      "branch": "declarative",
+      "submodules": false,
+      "revision": "23a808e8ea8f56f588fb196560635a58e8a1e140",
+      "url": "https://github.com/firefox-extensions-declarative/Redirector-declarative/archive/23a808e8ea8f56f588fb196560635a58e8a1e140.tar.gz",
+      "hash": "sha256-ssapzYIlFE2jRDFestPduPXhF4qBtBAZpFU+n6pqbFk="
+    },
     "stylus-declarative": {
       "type": "Git",
       "repository": {
