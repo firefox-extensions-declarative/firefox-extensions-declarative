@@ -4,7 +4,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      (inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasSuffix "npins/default.nix")) ./nix
+      ((inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasSuffix "npins/default.nix")).filterNot (inputs.nixpkgs.lib.hasSuffix ".pkg.nix")) ./nix
     );
 
   inputs = {
@@ -15,6 +15,10 @@
         git-hooks.follows = "git-hooks";
         nixpkgs.follows = "nixpkgs";
       };
+    };
+    callpackage-tree = {
+      url = "github:bitbloxhub/callpackage-tree";
+      flake = false;
     };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {

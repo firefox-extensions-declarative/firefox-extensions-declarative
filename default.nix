@@ -1,18 +1,18 @@
 {
-  system ? builtins.currentSystem,
-  overrides ? [ ],
+  pkgs ? import <nixpkgs> { },
 }:
-let
-  polyfillSrc = builtins.fetchTarball {
-    url = "https://github.com/bitbloxhub/flake-ultra-polyfill/archive/0730ed1f80b00cdac4cd3c88416845bf470681c0.tar.gz";
-    sha256 = "sha256-GTewO3D2TC14lXqLKvrqiAS401DaXQiKMqbNfPZCc0k=";
-  };
-  polyfill = import polyfillSrc;
-  fetched = polyfill.fetchFlakeInputs {
-    root = ./.;
-    lockFile = ./flake.lock;
-    inherit overrides;
-  };
-  flake = polyfill.callFlake fetched;
-in
-flake.packages.${system}
+{
+  darkreader-declarative = pkgs.callPackage ./nix/extensions/darkreader-declarative.pkg.nix { };
+  dearrow-declarative = pkgs.callPackage ./nix/extensions/dearrow-declarative.pkg.nix { };
+  redirector-declarative = pkgs.callPackage ./nix/extensions/redirector-declarative.pkg.nix { };
+  sponsorblock-declarative = pkgs.callPackage ./nix/extensions/sponsorblock-declarative.pkg.nix { };
+  stylus-declarative = pkgs.callPackage ./nix/extensions/stylus-declarative.pkg.nix { };
+  surfingkeys-declarative = pkgs.callPackage ./nix/extensions/surfingkeys-declarative.pkg.nix { };
+  userchrome-toggle-extended-2-declarative =
+    pkgs.callPackage ./nix/extensions/userchrome-toggle-extended-2-declarative.pkg.nix
+      { };
+  violentmonkey-declarative = pkgs.callPackage ./nix/extensions/violentmonkey-declarative.pkg.nix { };
+  youtube-shorts-block-declarative =
+    pkgs.callPackage ./nix/extensions/youtube-shorts-block-declarative.pkg.nix
+      { };
+}
