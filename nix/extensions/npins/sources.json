@@ -26,6 +26,19 @@
       "url": "https://github.com/firefox-extensions-declarative/Redirector-declarative/archive/23a808e8ea8f56f588fb196560635a58e8a1e140.tar.gz",
       "hash": "sha256-ssapzYIlFE2jRDFestPduPXhF4qBtBAZpFU+n6pqbFk="
     },
+    "sponsorblock-declarative": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "firefox-extensions-declarative",
+        "repo": "SponsorBlock-declarative"
+      },
+      "branch": "declarative",
+      "submodules": true,
+      "revision": "f16ba2f6db32e55f93460dde80ec126439eb9097",
+      "url": "https://github.com/firefox-extensions-declarative/SponsorBlock-declarative/archive/f16ba2f6db32e55f93460dde80ec126439eb9097.tar.gz",
+      "hash": "sha256-4W+0+dgPBr3/Dd9s8oe5c4KWXX6YBmbHdjO/QkvnAEU="
+    },
     "stylus-declarative": {
       "type": "Git",
       "repository": {
