@@ -1,4 +1,4 @@
-args@{
+{
   stdenv,
   nodejs_25,
   fetchYarnDeps,
@@ -7,12 +7,12 @@ args@{
   zip,
   vips,
   python3,
+  node-gyp,
+  pkg-config,
   ...
 }:
 let
   nodejs = nodejs_25;
-  nodeGyp = args."node-gyp";
-  pkgConfig = args."pkg-config";
   violentmonkeyExtensionId = "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}";
   src = (import ./npins).violentmonkey-declarative;
   yarnDeps = fetchYarnDeps {
@@ -29,12 +29,12 @@ stdenv.mkDerivation {
   env.npm_config_nodedir = nodejs;
   nativeBuildInputs = [
     nodejs
-    nodeGyp
+    node-gyp
     yarn
     yarnConfigHook
     zip
     vips
-    pkgConfig
+    pkg-config
     python3
   ];
   buildPhase = ''

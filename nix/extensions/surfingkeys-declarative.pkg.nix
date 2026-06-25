@@ -1,17 +1,17 @@
-args@{
+{
   stdenv,
   nodejs_25,
   importNpmLock,
   pixman,
   cairo,
   pango,
+  node-gyp,
+  pkg-config,
+  webpack-cli,
   ...
 }:
 let
   nodejs = nodejs_25;
-  nodeGyp = args."node-gyp";
-  pkgConfig = args."pkg-config";
-  webpackCli = args."webpack-cli";
   # Not official, but its in the fork
   surfingkeysExtensionId = "surfingkeys@brookhong.github.io";
   src = (import ./npins).surfingkeys-declarative;
@@ -20,8 +20,8 @@ let
     npmRoot = src;
     package = builtins.fromJSON (builtins.readFile "${src}/package.json");
     derivationArgs.nativeBuildInputs = [
-      nodeGyp
-      pkgConfig
+      node-gyp
+      pkg-config
       pixman
       cairo
       pango
@@ -34,7 +34,7 @@ stdenv.mkDerivation {
   name = "surfingkeys-declarative";
   nativeBuildInputs = [
     nodejs
-    webpackCli
+    webpack-cli
   ];
   buildPhase = ''
     mkdir -p node_modules
