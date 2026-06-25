@@ -1,6 +1,6 @@
 {
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   fetchYarnDeps,
   yarn,
   yarnConfigHook,
@@ -12,7 +12,7 @@
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   violentmonkeyExtensionId = "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}";
   src = (import ./npins).violentmonkey-declarative;
   yarnDeps = fetchYarnDeps {

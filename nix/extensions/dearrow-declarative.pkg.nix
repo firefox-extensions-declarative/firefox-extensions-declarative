@@ -1,12 +1,12 @@
 {
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   importNpmLock,
   zip,
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   extensionId = "deArrow@ajay.app";
   src = (import ./npins).dearrow-declarative;
   npmDeps = importNpmLock.buildNodeModules {

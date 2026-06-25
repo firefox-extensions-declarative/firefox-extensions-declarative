@@ -1,11 +1,11 @@
 {
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   importNpmLock,
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   src = (import ./npins).darkreader-declarative;
   npmDeps = importNpmLock.buildNodeModules {
     inherit nodejs;

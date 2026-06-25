@@ -1,6 +1,6 @@
 {
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   importNpmLock,
   pixman,
   cairo,
@@ -11,7 +11,7 @@
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   # Not official, but its in the fork
   surfingkeysExtensionId = "surfingkeys@brookhong.github.io";
   src = (import ./npins).surfingkeys-declarative;

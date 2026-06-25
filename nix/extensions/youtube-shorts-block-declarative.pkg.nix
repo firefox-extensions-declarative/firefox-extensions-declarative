@@ -1,11 +1,11 @@
 {
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   importNpmLock,
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   extensionId = "{34daeb50-c2d2-4f14-886a-7160b24d66a4}";
   src = (import ./npins).youtube-shorts-block-declarative;
   npmDeps = importNpmLock.buildNodeModules {

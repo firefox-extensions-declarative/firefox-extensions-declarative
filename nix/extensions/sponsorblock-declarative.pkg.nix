@@ -1,13 +1,13 @@
 {
   lib,
   stdenv,
-  nodejs_25,
+  nodejs_latest,
   importNpmLock,
   zip,
   ...
 }:
 let
-  nodejs = nodejs_25;
+  nodejs = nodejs_latest;
   extensionId = "sponsorBlocker@ajay.app";
   src = (import ./npins).sponsorblock-declarative;
   package = builtins.fromJSON (builtins.readFile "${src}/package.json");
