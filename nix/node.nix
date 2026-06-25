@@ -6,7 +6,7 @@
     }:
     let
       src = ../.;
-      nodejs = pkgs.nodejs_25;
+      nodejs = pkgs.nodejs_latest;
       pnpm = pkgs.pnpm_10;
       pnpmDeps = pkgs.fetchPnpmDeps {
         inherit src pnpm;
