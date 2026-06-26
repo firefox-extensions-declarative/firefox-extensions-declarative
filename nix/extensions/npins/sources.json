@@ -48,9 +48,9 @@
       },
       "branch": "declarative",
       "submodules": true,
-      "revision": "f16ba2f6db32e55f93460dde80ec126439eb9097",
-      "url": "https://github.com/firefox-extensions-declarative/SponsorBlock-declarative/archive/f16ba2f6db32e55f93460dde80ec126439eb9097.tar.gz",
-      "hash": "sha256-4W+0+dgPBr3/Dd9s8oe5c4KWXX6YBmbHdjO/QkvnAEU="
+      "revision": "546ea177a50d174452f4be1dd88fd4175063f827",
+      "url": null,
+      "hash": "sha256-OnzMzTk6muVrVQEaBW+nGWdjtnWYpkBea2QXjZfs2eQ="
     },
     "stylus-declarative": {
       "type": "Git",
