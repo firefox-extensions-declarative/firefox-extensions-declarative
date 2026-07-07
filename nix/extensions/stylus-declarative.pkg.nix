@@ -15,7 +15,7 @@ let
   pnpmDeps = fetchPnpmDeps {
     inherit src pnpm;
     pname = "stylus-pnpm-deps";
-    hash = "sha256-GxzvcFemq624JdAfhMGsF1GwZlvW8HucLp+rMXUn7Qc=";
+    hash = "sha256-NjlCwxxsDxa0wmucAkVl0Hn329GOmBWdXyEkIsTjDrk=";
     fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
   };
 in
@@ -30,7 +30,7 @@ stdenv.mkDerivation {
   ];
   buildPhase = ''
     pnpm run build-firefox
-    cd dist-firefox/
+    cd dist-firefox-mv2/
     zip -r ../stylus.xpi .
     cd ..
   '';
