@@ -48,9 +48,9 @@
       },
       "branch": "declarative",
       "submodules": true,
-      "revision": "546ea177a50d174452f4be1dd88fd4175063f827",
+      "revision": "0d024817df8637f592759605c7276d224b35591e",
       "url": null,
-      "hash": "sha256-OnzMzTk6muVrVQEaBW+nGWdjtnWYpkBea2QXjZfs2eQ="
+      "hash": "sha256-7+43/uSEH3iKQX6gOF0Q2HoMDORLiyYS5VLM76fBk+0="
     },
     "stylus-declarative": {
       "type": "Git",
