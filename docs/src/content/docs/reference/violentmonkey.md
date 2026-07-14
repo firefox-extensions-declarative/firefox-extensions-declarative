@@ -11,8 +11,7 @@ title: Violentmonkey
 ## Building
 Run the following:
 ```bash
-yarn install
-yarn run build
+pnpm run build
 cd dist/
 zip -r ../violentmonkey.xpi .
 cd ..
