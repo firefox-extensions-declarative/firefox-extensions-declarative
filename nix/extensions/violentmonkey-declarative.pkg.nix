@@ -1,9 +1,9 @@
 {
   stdenv,
   nodejs_latest,
-  fetchYarnDeps,
-  yarn,
-  yarnConfigHook,
+  pnpm_11,
+  fetchPnpmDeps,
+  pnpmConfigHook,
   zip,
   vips,
   python3,
@@ -13,35 +13,33 @@
 }:
 let
   nodejs = nodejs_latest;
+  pnpm = pnpm_11;
   violentmonkeyExtensionId = "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}";
   src = (import ./npins).violentmonkey-declarative;
-  yarnDeps = fetchYarnDeps {
-    inherit src;
-    pname = "violentmonkey-yarn-deps";
-    hash = "sha256-yZd3jLaSmBzSLaYChZ/vNmalOawqQ3y/Xw57QwVhbQE=";
+  pnpmDeps = fetchPnpmDeps {
+    inherit src pnpm;
+    pname = "violentmonkey-pnpm-deps";
+    hash = "sha256-DcKIFbrY8n53UvaXfikMWNQcUrW5R23xpBxuWxQq/oI=";
+    fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
   };
 in
 stdenv.mkDerivation {
-  inherit src;
+  inherit src pnpmDeps;
   name = "violentmonkey-declarative";
-  yarnOfflineCache = yarnDeps;
   env.SHARP_FORCE_GLOBAL_LIBVIPS = 1;
   env.npm_config_nodedir = nodejs;
   nativeBuildInputs = [
     nodejs
     node-gyp
-    yarn
-    yarnConfigHook
+    pnpm
+    pnpmConfigHook
     zip
     vips
     pkg-config
     python3
   ];
   buildPhase = ''
-    pushd node_modules/sharp
-    yarn --offline run install
-    popd
-    yarn run build
+    pnpm run build
     pushd dist/
     zip -r ../violentmonkey.xpi .
     popd
