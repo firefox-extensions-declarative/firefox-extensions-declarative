@@ -100,9 +100,9 @@
       },
       "branch": "declarative",
       "submodules": false,
-      "revision": "e703c1cc6e21604467a33d6de683b7675820852e",
-      "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/e703c1cc6e21604467a33d6de683b7675820852e.tar.gz",
-      "hash": "sha256-MdQDbm8Y0USWHYMaQXCxwXLBqKslX2OS3L2hqWFKY4U="
+      "revision": "13ce0783db00ad7aa19f25663e1f7e3aa9886443",
+      "url": "https://github.com/firefox-extensions-declarative/violentmonkey-declarative/archive/13ce0783db00ad7aa19f25663e1f7e3aa9886443.tar.gz",
+      "hash": "sha256-QQubq4FqhqEj5PjPeYFSSmAeur9aJjPzCC7IZCzzy+U="
     },
     "youtube-shorts-block-declarative": {
       "type": "Git",
