@@ -19,7 +19,7 @@ let
   pnpmDeps = fetchPnpmDeps {
     inherit src pnpm;
     pname = "violentmonkey-pnpm-deps";
-    hash = "sha256-xAgU31U8D0qMs8P/dUox8YnZNgEa5fcIfhXyJdSpuE4=";
+    hash = "sha256-/BsfmGg8oGFUDd99PpwSviGUgNVP0yrKJQ/ndpRzUyk=";
     fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
   };
 in
