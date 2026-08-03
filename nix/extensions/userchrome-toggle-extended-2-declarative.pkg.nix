@@ -4,12 +4,11 @@
   ...
 }:
 let
-  userChromeToggleExtensionId = "userchrome-toggle-extended@n2ezr.ru";
   src = (import ./npins).userchrome-toggle-extended-2-declarative;
+  userChromeToggleExtensionId = "userchrome-toggle-extended@n2ezr.ru";
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "userchrome-toggle-extended-2-declarative";
   nativeBuildInputs = [ zip ];
   buildPhase = ''
     zip -r ../userchrome-toggle-extended-2-declarative.xpi .
@@ -19,5 +18,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp ../userchrome-toggle-extended-2-declarative.xpi $dst/${userChromeToggleExtensionId}.xpi
   '';
+  name = "userchrome-toggle-extended-2-declarative";
   passthru.extensionId = userChromeToggleExtensionId;
 }

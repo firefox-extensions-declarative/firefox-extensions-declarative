@@ -1,37 +1,38 @@
 {
   stdenv,
-  nodejs_latest,
-  importNpmLock,
-  pixman,
   cairo,
-  pango,
+  importNpmLock,
   node-gyp,
+  nodejs_latest,
+  pango,
+  pixman,
   pkg-config,
   webpack-cli,
   ...
 }:
 let
   nodejs = nodejs_latest;
-  # Not official, but its in the fork
-  surfingkeysExtensionId = "surfingkeys@brookhong.github.io";
-  src = (import ./npins).surfingkeys-declarative;
   npmDeps = importNpmLock.buildNodeModules {
     inherit nodejs;
+    derivationArgs = {
+      nativeBuildInputs = [
+        node-gyp
+        pkg-config
+        pixman
+        cairo
+        pango
+      ];
+      env.PUPPETEER_SKIP_DOWNLOAD = "1";
+    };
     npmRoot = src;
     package = builtins.fromJSON (builtins.readFile "${src}/package.json");
-    derivationArgs.nativeBuildInputs = [
-      node-gyp
-      pkg-config
-      pixman
-      cairo
-      pango
-    ];
-    derivationArgs.env.PUPPETEER_SKIP_DOWNLOAD = "1";
   };
+  src = (import ./npins).surfingkeys-declarative;
+  # Not official, but its in the fork
+  surfingkeysExtensionId = "surfingkeys@brookhong.github.io";
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "surfingkeys-declarative";
   nativeBuildInputs = [
     nodejs
     webpack-cli
@@ -48,5 +49,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp dist/production/firefox/sk.zip $dst/${surfingkeysExtensionId}.xpi
   '';
+  name = "surfingkeys-declarative";
   passthru.extensionId = surfingkeysExtensionId;
 }

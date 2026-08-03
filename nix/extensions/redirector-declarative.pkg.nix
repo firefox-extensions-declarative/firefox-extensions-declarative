@@ -9,7 +9,6 @@ let
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "redirector-declarative";
   nativeBuildInputs = [ python3 ];
   buildPhase = ''
     # ZIP format cannot store timestamps before 1980.
@@ -21,5 +20,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp build/redirector-firefox.xpi $dst/${extensionId}.xpi
   '';
+  name = "redirector-declarative";
   passthru.extensionId = extensionId;
 }

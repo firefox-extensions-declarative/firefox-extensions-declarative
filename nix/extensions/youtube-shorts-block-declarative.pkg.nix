@@ -1,22 +1,21 @@
 {
   stdenv,
-  nodejs_latest,
   importNpmLock,
+  nodejs_latest,
   ...
 }:
 let
-  nodejs = nodejs_latest;
   extensionId = "{34daeb50-c2d2-4f14-886a-7160b24d66a4}";
-  src = (import ./npins).youtube-shorts-block-declarative;
+  nodejs = nodejs_latest;
   npmDeps = importNpmLock.buildNodeModules {
     inherit nodejs;
     npmRoot = src;
     package = builtins.fromJSON (builtins.readFile "${src}/package.json");
   };
+  src = (import ./npins).youtube-shorts-block-declarative;
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "youtube-shorts-block-declarative";
   nativeBuildInputs = [ nodejs ];
   buildPhase = ''
     cp -r ${npmDeps}/node_modules .
@@ -28,5 +27,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp Youtube-shorts_block_*_fx.zip $dst/${extensionId}.xpi
   '';
+  name = "youtube-shorts-block-declarative";
   passthru.extensionId = extensionId;
 }

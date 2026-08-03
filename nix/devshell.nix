@@ -3,11 +3,9 @@
   ...
 }:
 {
-  flake-file.inputs = {
-    make-shell = {
-      url = "github:nicknovitski/make-shell";
-      inputs.flake-compat.follows = "";
-    };
+  flake-file.inputs.make-shell = {
+    url = "github:nicknovitski/make-shell";
+    inputs.flake-compat.follows = "";
   };
 
   imports = [
@@ -17,7 +15,6 @@
   perSystem =
     {
       pkgs,
-      inputs',
       ...
     }:
     {
@@ -27,18 +24,14 @@
           pkgs.nixfmt
           pkgs.deadnix
           pkgs.statix
-          inputs'.flint.packages.default
           pkgs.npins
           pkgs.just
           pkgs.tilt
-          pkgs.typos
         ];
 
         shellHook = ''
           export TILT_PORT=5031
         '';
       };
-
-      treefmt.programs.typos.enable = true;
     };
 }
