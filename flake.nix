@@ -51,6 +51,15 @@
       };
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pedantix = {
+      url = "github:Swarsel/pedantix/feat/per-file";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        git-hooks-nix.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";

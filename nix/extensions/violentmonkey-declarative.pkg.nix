@@ -1,33 +1,30 @@
 {
   stdenv,
-  nodejs_latest,
-  pnpm_11,
   fetchPnpmDeps,
-  pnpmConfigHook,
-  zip,
-  vips,
-  python3,
   node-gyp,
+  nodejs_latest,
   pkg-config,
+  pnpmConfigHook,
+  pnpm_11,
+  python3,
+  vips,
+  zip,
   ...
 }:
 let
   nodejs = nodejs_latest;
   pnpm = pnpm_11;
-  violentmonkeyExtensionId = "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}";
-  src = (import ./npins).violentmonkey-declarative;
   pnpmDeps = fetchPnpmDeps {
     inherit src pnpm;
     pname = "violentmonkey-pnpm-deps";
-    hash = "sha256-/BsfmGg8oGFUDd99PpwSviGUgNVP0yrKJQ/ndpRzUyk=";
     fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
+    hash = "sha256-/BsfmGg8oGFUDd99PpwSviGUgNVP0yrKJQ/ndpRzUyk=";
   };
+  src = (import ./npins).violentmonkey-declarative;
+  violentmonkeyExtensionId = "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}";
 in
 stdenv.mkDerivation {
   inherit src pnpmDeps;
-  name = "violentmonkey-declarative";
-  env.SHARP_FORCE_GLOBAL_LIBVIPS = 1;
-  env.npm_config_nodedir = nodejs;
   nativeBuildInputs = [
     nodejs
     node-gyp
@@ -38,6 +35,10 @@ stdenv.mkDerivation {
     pkg-config
     python3
   ];
+  env = {
+    SHARP_FORCE_GLOBAL_LIBVIPS = 1;
+    npm_config_nodedir = nodejs;
+  };
   buildPhase = ''
     pnpm run build
     pushd dist/
@@ -49,5 +50,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp violentmonkey.xpi $dst/${violentmonkeyExtensionId}.xpi
   '';
+  name = "violentmonkey-declarative";
   passthru.extensionId = violentmonkeyExtensionId;
 }

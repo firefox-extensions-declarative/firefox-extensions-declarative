@@ -1,21 +1,20 @@
 {
   stdenv,
-  nodejs_latest,
   importNpmLock,
+  nodejs_latest,
   ...
 }:
 let
   nodejs = nodejs_latest;
-  src = (import ./npins).darkreader-declarative;
   npmDeps = importNpmLock.buildNodeModules {
     inherit nodejs;
     npmRoot = src;
     package = builtins.fromJSON (builtins.readFile "${src}/package.json");
   };
+  src = (import ./npins).darkreader-declarative;
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "darkreader-declarative";
   nativeBuildInputs = [ nodejs ];
   buildPhase = ''
     mkdir -p node_modules
@@ -27,5 +26,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp build/release/darkreader-firefox.xpi $dst/addon@darkreader.org.xpi
   '';
+  name = "darkreader-declarative";
   passthru.extensionId = "addon@darkreader.org";
 }

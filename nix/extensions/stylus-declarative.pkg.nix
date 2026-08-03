@@ -1,27 +1,26 @@
 {
   stdenv,
-  nodejs_latest,
-  pnpm_11,
   fetchPnpmDeps,
+  nodejs_latest,
   pnpmConfigHook,
+  pnpm_11,
   zip,
   ...
 }:
 let
   nodejs = nodejs_latest;
   pnpm = pnpm_11;
-  stylusExtensionId = "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}";
-  src = (import ./npins).stylus-declarative;
   pnpmDeps = fetchPnpmDeps {
     inherit src pnpm;
     pname = "stylus-pnpm-deps";
-    hash = "sha256-fSsfDm+mnL/H7opoZSAt7X+tRZA19ooCfapJd8yKlVs=";
     fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
+    hash = "sha256-fSsfDm+mnL/H7opoZSAt7X+tRZA19ooCfapJd8yKlVs=";
   };
+  src = (import ./npins).stylus-declarative;
+  stylusExtensionId = "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}";
 in
 stdenv.mkDerivation {
   inherit src pnpmDeps;
-  name = "stylus-declarative";
   nativeBuildInputs = [
     nodejs
     pnpm
@@ -39,5 +38,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp stylus.xpi $dst/${stylusExtensionId}.xpi
   '';
+  name = "stylus-declarative";
   passthru.extensionId = stylusExtensionId;
 }

@@ -12,22 +12,10 @@
     inputs.treefmt-nix.flakeModule
   ];
 
-  perSystem.treefmt =
-    {
-      pkgs,
-      ...
-    }:
-    {
-      projectRootFile = "flake.lock";
-      programs.nixfmt = {
-        enable = true;
-        package = pkgs.nixfmt;
-      };
-      programs.deadnix.enable = true;
-      programs.statix.enable = true;
-
-      settings.global.excludes = [
-        "*/npins/*"
-      ];
-    };
+  perSystem.treefmt = {
+    projectRootFile = "flake.lock";
+    settings.global.excludes = [
+      "*/npins/*"
+    ];
+  };
 }

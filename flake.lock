@@ -218,6 +218,36 @@
         "type": "github"
       }
     },
+    "pedantix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "git-hooks-nix": [
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785795199,
+        "narHash": "sha256-9OFPhOkow0T2UVy6/i0TmsvO5zJTfqn9Eyz4CR3seEo=",
+        "owner": "Swarsel",
+        "repo": "pedantix",
+        "rev": "f34d84e4fb7df031b1dc55f2e6be007ace930764",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Swarsel",
+        "ref": "feat/per-file",
+        "repo": "pedantix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "actions-nix": "actions-nix",
@@ -230,6 +260,7 @@
         "make-shell": "make-shell",
         "nix-auto-ci": "nix-auto-ci",
         "nixpkgs": "nixpkgs",
+        "pedantix": "pedantix",
         "treefmt-nix": "treefmt-nix"
       }
     },

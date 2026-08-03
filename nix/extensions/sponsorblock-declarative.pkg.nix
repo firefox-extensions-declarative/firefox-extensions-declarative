@@ -1,34 +1,37 @@
 {
   lib,
   stdenv,
-  nodejs_latest,
   importNpmLock,
+  nodejs_latest,
   zip,
   ...
 }:
 let
-  nodejs = nodejs_latest;
   extensionId = "sponsorBlocker@ajay.app";
-  src = (import ./npins).sponsorblock-declarative;
+  nodejs = nodejs_latest;
+  npmDeps = importNpmLock.buildNodeModules {
+    inherit nodejs package packageLock;
+    derivationArgs.env.CHROMEDRIVER_SKIP_DOWNLOAD = "true";
+    npmRoot = src;
+  };
   package = builtins.fromJSON (builtins.readFile "${src}/package.json");
   packageLock =
     let
-      raw = builtins.fromJSON (builtins.readFile "${src}/package-lock.json");
       patchResolved =
         modulePath: module:
         if module ? resolved || !(module ? version) || !(lib.hasInfix "node_modules/" modulePath) then
           module
         else
           let
-            packagePath = lib.last (
-              lib.splitString "/node_modules/" (lib.removePrefix "node_modules/" modulePath)
-            );
             nameParts = lib.splitString "/" packagePath;
             packageName =
               if lib.hasPrefix "@" (builtins.elemAt nameParts 0) then
                 "${builtins.elemAt nameParts 0}/${builtins.elemAt nameParts 1}"
               else
                 builtins.elemAt nameParts 0;
+            packagePath = lib.last (
+              lib.splitString "/node_modules/" (lib.removePrefix "node_modules/" modulePath)
+            );
             tarballName =
               if lib.hasPrefix "@" (builtins.elemAt nameParts 0) then
                 builtins.elemAt nameParts 1
@@ -39,20 +42,16 @@ let
           // {
             resolved = "https://registry.npmjs.org/${packageName}/-/${tarballName}-${module.version}.tgz";
           };
+      raw = builtins.fromJSON (builtins.readFile "${src}/package-lock.json");
     in
     raw
     // {
       packages = lib.mapAttrs patchResolved raw.packages;
     };
-  npmDeps = importNpmLock.buildNodeModules {
-    inherit nodejs package packageLock;
-    npmRoot = src;
-    derivationArgs.env.CHROMEDRIVER_SKIP_DOWNLOAD = "true";
-  };
+  src = (import ./npins).sponsorblock-declarative;
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "sponsorblock-declarative";
   nativeBuildInputs = [
     nodejs
     zip
@@ -71,5 +70,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp sponsorblock.xpi $dst/${extensionId}.xpi
   '';
+  name = "sponsorblock-declarative";
   passthru.extensionId = extensionId;
 }

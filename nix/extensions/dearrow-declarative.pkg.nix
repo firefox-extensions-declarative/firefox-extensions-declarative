@@ -1,24 +1,23 @@
 {
   stdenv,
-  nodejs_latest,
   importNpmLock,
+  nodejs_latest,
   zip,
   ...
 }:
 let
-  nodejs = nodejs_latest;
   extensionId = "deArrow@ajay.app";
-  src = (import ./npins).dearrow-declarative;
+  nodejs = nodejs_latest;
   npmDeps = importNpmLock.buildNodeModules {
     inherit nodejs;
+    derivationArgs.env.CHROMEDRIVER_SKIP_DOWNLOAD = "true";
     npmRoot = src;
     package = builtins.fromJSON (builtins.readFile "${src}/package.json");
-    derivationArgs.env.CHROMEDRIVER_SKIP_DOWNLOAD = "true";
   };
+  src = (import ./npins).dearrow-declarative;
 in
 stdenv.mkDerivation {
   inherit src;
-  name = "dearrow-declarative";
   nativeBuildInputs = [
     nodejs
     zip
@@ -37,5 +36,6 @@ stdenv.mkDerivation {
     mkdir -p $dst
     cp dearrow.xpi $dst/${extensionId}.xpi
   '';
+  name = "dearrow-declarative";
   passthru.extensionId = extensionId;
 }
