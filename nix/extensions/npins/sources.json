@@ -61,9 +61,9 @@
       },
       "branch": "declarative",
       "submodules": false,
-      "revision": "8f2592d9096d8073eb45ef603ec6b240b52a4c64",
-      "url": "https://github.com/firefox-extensions-declarative/stylus-declarative/archive/8f2592d9096d8073eb45ef603ec6b240b52a4c64.tar.gz",
-      "hash": "sha256-e9qkkehxK0GgaPT6FodsFhkP5ok2ejGI5MG/PdNPKvQ="
+      "revision": "d7ac97cc2e46b73a2506d02793a201d2084804e4",
+      "url": "https://github.com/firefox-extensions-declarative/stylus-declarative/archive/d7ac97cc2e46b73a2506d02793a201d2084804e4.tar.gz",
+      "hash": "sha256-s6VPa23G0RWZCHZ8BYYnfkaCzJjr9LZKySx3ntWtYts="
     },
     "surfingkeys-declarative": {
       "type": "Git",
