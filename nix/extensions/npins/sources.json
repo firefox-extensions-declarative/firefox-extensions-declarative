@@ -9,9 +9,9 @@
       },
       "branch": "declarative",
       "submodules": false,
-      "revision": "15089c6808786e6af060c68fc51e3b527faae307",
-      "url": "https://github.com/firefox-extensions-declarative/darkreader-declarative/archive/15089c6808786e6af060c68fc51e3b527faae307.tar.gz",
-      "hash": "sha256-H+a8Xd3TbSKMEMzgoUgMqWrQyQbhR4ai+a7j18sCgl0="
+      "revision": "84bdafc29f82a17528b8b3196fc1e15d47e5fffa",
+      "url": "https://github.com/firefox-extensions-declarative/darkreader-declarative/archive/84bdafc29f82a17528b8b3196fc1e15d47e5fffa.tar.gz",
+      "hash": "sha256-ImPvZ1f5lC7cBxXVNnPZfKTdwLnuOPxiVyabMuEP3vY="
     },
     "dearrow-declarative": {
       "type": "Git",
