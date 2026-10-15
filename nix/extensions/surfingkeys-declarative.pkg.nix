@@ -27,6 +27,8 @@ let
       pango
     ];
     derivationArgs.env.PUPPETEER_SKIP_DOWNLOAD = "1";
+    # canvas 3.2.0 uses fixed-width integer types without including <cstdint>.
+    derivationArgs.env.CXXFLAGS = "-include cstdint";
   };
 in
 stdenv.mkDerivation {
