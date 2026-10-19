@@ -15,7 +15,7 @@ let
   pnpmDeps = fetchPnpmDeps {
     inherit src pnpm;
     pname = "stylus-pnpm-deps";
-    hash = "sha256-/Zw6fcnkhlo2qNYhvYdiEqg1J4XUbnP2TPCx5xUUneA=";
+    hash = "sha256-vn1HqhQz7qO8f6QH1GElcmDH+Fx6Q2oCOIvRqViMgm4=";
     fetcherVersion = 4; # https://nixos.org/manual/nixpkgs/stable/#javascript-pnpm-fetcherVersion
   };
 in
